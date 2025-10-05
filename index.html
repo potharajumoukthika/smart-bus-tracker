@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Bus Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <h1>Smart Bus Tracking System</h1>
+
+  <!-- Login Section -->
+  <div class="card" id="loginCard">
+    <h2>Login</h2>
+    <label for="role">Role:</label>
+    <select id="role">
+      <option value="student">Student</option>
+      <option value="parent">Parent</option>
+      <option value="staff">Staff</option>
+    </select>
+
+    <label for="collegeId">College ID:</label>
+    <input type="text" id="collegeId" placeholder="Enter College ID">
+
+    <label for="busNumber">Bus Number:</label>
+    <input type="text" id="busNumber" placeholder="Enter Bus Number">
+
+    <label for="stopLocation">Stop Location:</label>
+    <input type="text" id="stopLocation" placeholder="Enter Your Stop">
+
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div class="card" id="dashboardCard" style="display:none;">
+    <h2>Welcome!</h2>
+    <p><strong>Bus No:</strong> <span id="busInfo">9218</span></p>
+    <p><strong>Status:</strong> Bus No. 9218 just departed from college 🚍</p>
+    <p><strong>GPS Location:</strong> Machilipatnam</p>
+    <p><strong>Distance to Stop:</strong> <span id="distance">4.6</span> km</p>
+    <p><strong>ETA:</strong> <span id="eta">8</span> min</p>
+    <p><strong>Speed:</strong> 42 km/h</p>
+    <button onclick="checkDistance()">Check 5KM Alert</button>
+    <div id="notification" style="display:none;">
+      <p>📢 Alert: Bus is within 5KM of your stop!</p>
+    </div>
+    <div id="map" style="height: 300px; width: 100%; margin-top: 20px;"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
